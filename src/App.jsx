@@ -1,0 +1,29 @@
+import { useState } from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Card from './components/Card';
+import data from './data';
+
+import './App.css';
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  const dataElements = data.map((item) => {
+    return <Card key={item.id} {...item} />;
+  });
+
+  return (
+    <div className='App'>
+      <Navbar />
+
+      <Hero />
+
+      <div className='card-grid'>
+        <div className='card-grid__wrap'>{dataElements}</div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
