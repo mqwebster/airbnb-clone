@@ -7,8 +7,6 @@ import data from './data';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const dataElements = data.map((item) => {
     return <Card key={item.id} {...item} />;
   });
